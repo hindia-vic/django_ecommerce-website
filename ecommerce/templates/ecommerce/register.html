@@ -1,0 +1,18 @@
+{% extends 'ecommerce/layout.html' %}
+
+{% block  content %}
+{% for message in messages %}
+{{message}}
+{% endfor %}
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="username" name="username"/>
+    <input type="text" placeholder="firstname" name="firstname"/>
+    <input type="text" placeholder="lastname" name="lastname"/>
+    <input type="text" placeholder="phone-number" name="phone"/>
+    <input type="email" placeholder="email" name="email"/>
+    <input type="password" placeholder="password" name="password1"/>
+    <input type="password" placeholder=" re-enterpassword" name="password2"/>
+    <input type="submit"/>
+</form>
+{% endblock content %}

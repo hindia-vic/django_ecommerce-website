@@ -1,0 +1,17 @@
+{% extends 'ecommerce/layout.html' %}
+
+{% block  content %}
+<h1>LOGIN</h1>
+{% for message in messages %}
+{{message}}
+{% endfor %}
+<form action=""method='post'>
+    {% csrf_token %}
+    <input type="text" placeholder="username" name="username">
+    <input type="password" placeholder="password" name="password">
+    <input type="submit">
+</form>
+<h1>Forgot password<a href={% url "reset_password" %}><button>Reset</button></a></h1>
+<h1>Don't have an account<a href={% url 'register' %}>Signup</a></h1>
+
+{% endblock content %}
